@@ -1,0 +1,291 @@
+$delay: 0.5s
+$red: #DB545A
+$blue: #478AC9
+
+
+@mixin btn($wid ,$hei)
+   text-transform: uppercase
+   margin: 30px 0
+   color: #fff
+   display: flex
+   align-items: center
+   justify-content: center
+   width: $wid
+   height: $hei
+   font-size: 20px
+   background-color: $red
+   transition: $delay
+   font-weight: bold
+
+
+.container
+   width: 60%
+   margin: 0 auto
+
+.header
+   width: 100%
+   height: 80px
+   background-color: #fff
+   font-size: 20px
+
+   .container--header
+      display: flex
+
+      .logo
+         display: grid
+         align-items: center
+         font-size: 36px
+         color: #BBBBBB
+
+      .nav
+         display: grid
+         align-items: center
+         justify-content: end
+         width: 100%
+         height: 80px
+         grid-gap: 0 30px
+         grid-template-columns: repeat(3, max-content)
+
+         a
+            color: #000
+            transition: $delay   
+         a:hover
+            color: $red
+
+//header
+
+.about
+   width: 100%
+   height: 700px
+   background-color: $blue
+
+   .container--about
+      height: 700px
+      display: grid
+      align-items: center
+      grid-template-columns: repeat(2, 1fr)
+
+      .about-img
+         display: grid
+         align-items: center
+         justify-content: end
+         height: 100%
+         padding: 0px 50px
+   
+         img
+            display: block
+            width: 500px
+            height: 500px
+            border-radius: 50%
+   
+      .about-text
+         display: grid
+         align-items: center
+         grid-gap: 20px 0
+         color: #fff
+         width: 450px
+         padding: 0 20px 0 50px 
+   
+         p
+            text-transform: uppercase
+            font-size: 20px
+         
+         h5 
+            font-size: 55px
+            font-weight: bold
+   
+         div
+            font-size: 16px
+            line-height: 1.6
+
+         a
+            @include btn($wid:230px ,$hei:55px )
+            
+         a:hover
+            background-color: #fff
+            color: $blue
+
+//about
+
+.info
+   padding: 60px 0
+   width: 100%
+   height: 760px
+   background: url(../img/info.png) no-repeat
+   background-size: 100%
+   .container--info
+      display: flex
+      align-items: center
+      padding: 200px 0 0 0
+      .squat
+         padding: 50px 0
+         display: grid
+         grid-template-columns: repeat(5, max-content)
+         grid-gap: 0px 18px
+
+         .squat-card:nth-child(2n)
+            margin: -150px 0
+         .squat-card:hover
+            transform: scale(1.1)
+         .squat-card
+            box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3)
+            transform: scale(1)
+            padding: 30px 20px
+            width: 210px
+            height: 375px
+            border-radius: 10px
+            background-color: #fff
+            transition: $delay
+
+            div
+               margin: 0 auto
+               background-color: #E9F2FA
+               width: 80px
+               height: 80px
+               border-radius: 50%
+
+            h6 
+               margin: 20px 0
+               text-align: center
+               color: $blue
+               font-size: 20px
+
+            p 
+               text-align: center
+               font-size: 16px
+               line-height: 1.6
+
+            a 
+               width: 50px
+               display: flex
+               justify-content: center
+               margin: 55px auto
+               font-size: 16px
+               color: #000
+               border-bottom: 1px solid #000
+
+//info
+
+.slider
+   position: relative
+   width: 100%
+   height: 1315px
+   padding: 200px 0 0 0
+
+   .slider-block
+      z-index: 1
+      margin: -100px 0px 0 150px
+      position: absolute
+      width: 640px
+      height: 1050px
+      background-color: $red
+
+   .slider-flex
+      display: grid
+      justify-content: end
+      width: 100%
+
+      .slider-about
+         margin: -96px 0 
+         padding: 30px
+         color: #fff
+         z-index: 3
+         display: block
+         width: 445px
+         height: 370px
+         background-color: $blue
+
+         h4
+            font-size: 48px
+
+         p 
+            margin: 20px 0
+            line-height: 1.6
+            font-size: 18px
+         
+         a
+            @include btn($wid:175px ,$hei:45px)
+            font-size: 16px
+            margin: 50px 0
+         a:hover
+            background-color: #fff
+            color: $blue
+
+   .slider-card
+      display: grid
+      justify-content: center
+      grid-gap: 16px 0
+      grid-template-rows: repeat(2, max-content)
+
+      .slider-card_row
+         display: grid
+         grid-gap: 0 16px
+         grid-template-columns: repeat(3, max-content)
+
+         img
+            z-index: 2
+            display: block
+            width: 320px
+            height: 330px
+            transition: $delay
+
+         img:hover
+            filter: brightness(80%)
+
+//slider
+
+.comments 
+   height: 888px
+   width: 100%
+   background-color: $blue
+
+   h1
+      text-align: center
+      font-size: 36px
+      color: #fff
+      font-weight: bold
+      padding: 60px 0
+
+   .container--comments
+      display: grid
+      grid-gap: 30px 
+      grid-template-rows: repeat(2, max-content)
+      
+      .comments-row
+         display: grid
+         grid-gap: 30px 
+         justify-content: center
+         grid-template-columns: repeat(2, max-content)
+
+         .comments-block:hover
+            transform: scale(1.02)
+         .comments-block
+            padding: 40px 60px
+            width: 488px 
+            height: 290px
+            background-color: #fff
+            border-radius: 25px
+            transition: $delay
+         
+
+            p
+               font-size: 16px
+               line-height: 1.6
+
+            .comments-block_people
+               margin: 15px 0
+               display: grid
+               grid-gap: 0 15px
+               align-items: center
+               grid-template-columns: repeat(2, max-content)
+
+               img
+                  width: 75px
+                  height: 75px
+                  border: 6px solid #ADCCE9
+                  border-radius: 50%
+               
+               .comments-block_text
+                  h6
+                     font-weight: bold
+                     font-size: 20px
